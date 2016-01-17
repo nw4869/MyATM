@@ -18,9 +18,9 @@ import javax.swing.JOptionPane;
 class Account {
 //	private int accountNumber;
 	private int password;
-	//Óà¶î
+	//ä½™é¢
 	private double amount = 0;
-	//ok±íÊ¾ÊÇ·ñ¿ª»§
+	//okè¡¨ç¤ºæ˜¯å¦å¼€æˆ·
 	private boolean ok;
 
 	public Account() {

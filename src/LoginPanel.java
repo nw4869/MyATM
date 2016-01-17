@@ -16,7 +16,6 @@ public class LoginPanel extends BasePanel implements ActionListener{
 	
 	LoginPanel(ATM atm) {
 		super(atm);
-		// TODO Auto-generated constructor stub
 		//centerLayout.requestFocus();
 		centerLayout.grabFocus();
 		pfPwd.grabFocus();
@@ -25,10 +24,9 @@ public class LoginPanel extends BasePanel implements ActionListener{
 
 	@Override
 	protected void centerInit() {
-		// TODO Auto-generated method stub
 		//centerLayout.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		
-		lbl1 = new JLabel("ÇëÊäÈëÄúµÄÃÜÂë:");
+		lbl1 = new JLabel("è¯·è¾“å…¥æ‚¨çš„å¯†ç :");
 		pfPwd = new JPasswordField(10);
 
 		centerLayout.add(Box.createRigidArea(new Dimension(0, 20)));
@@ -43,7 +41,6 @@ public class LoginPanel extends BasePanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if(e.getSource() == btnBack){
 			atm.Quit();
 		}
@@ -65,10 +62,10 @@ public class LoginPanel extends BasePanel implements ActionListener{
 				atm.getScreen().initMain();
 			}
 			else{
-				JOptionPane.showMessageDialog(null, "ÃÜÂë´íÎó£¬ÇëÖØĞÂÊäÈë");
+				JOptionPane.showMessageDialog(null, "å¯†ç é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥");
 			}
 		}catch(NumberFormatException e){
-			JOptionPane.showMessageDialog(null, "ÊäÈë´íÎó£¡");
+			JOptionPane.showMessageDialog(null, "è¾“å…¥é”™è¯¯ï¼");
 		}
 	}
 	

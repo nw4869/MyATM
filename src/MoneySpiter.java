@@ -8,8 +8,7 @@ public class MoneySpiter {
 	}
 
 	public boolean spit(double money) {
-		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "ÒÑÍÂ³ö"+money+"Ôª£¬Çë²éÊÕ¡£");
+		JOptionPane.showMessageDialog(null, "å·²åå‡º"+money+"å…ƒï¼Œè¯·æŸ¥æ”¶ã€‚");
 		
         MoneyFrame moneyframe = new MoneyFrame();  
         moneyframe.setVisible(true);  

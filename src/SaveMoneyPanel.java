@@ -13,12 +13,10 @@ public class SaveMoneyPanel extends BasePanel {
 
 	SaveMoneyPanel(ATM atm) {
 		super(atm);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if (e.getSource() == btnBack) {
 			OnBtnBack();
 		} else if (e.getSource() == btnOK) {
@@ -31,8 +29,7 @@ public class SaveMoneyPanel extends BasePanel {
 
 	@Override
 	protected void centerInit() {
-		// TODO Auto-generated method stub
-		lblinfo = new JLabel("ÇëÊäÈëÒª´æ¿îµÄ½ğ¶î:");
+		lblinfo = new JLabel("è¯·è¾“å…¥è¦å­˜æ¬¾çš„é‡‘é¢:");
 
 		tfMoney = new JTextField(10);
 
@@ -53,22 +50,29 @@ public class SaveMoneyPanel extends BasePanel {
 
 	private void OnBtnOK() {
 		try {
+			if (!TakeMoneyPanel.isNumeric(tfMoney.getText())) {
+				JOptionPane.showMessageDialog(null, "è¾“å…¥é”™è¯¯");
+				return;
+			}
 			double money = new Double(tfMoney.getText());
+			if (!((int)money % 100 == 0)) {
+				JOptionPane.showMessageDialog(null, "é‡‘é¢å¿…é¡»ä¸ºæ•´ç™¾");
+				return;
+			}
 			if (!atm.SaveMoney(money)) {
-				JOptionPane.showMessageDialog(null, "´æ¿îÊ§°Ü!");
+				JOptionPane.showMessageDialog(null, "å­˜æ¬¾å¤±è´¥!");
 			}
 			else{
-				if(JOptionPane.showConfirmDialog(null, "ÒÑ³É¹¦´æ½ø"+money+"Ôª£¬ÊÇ·ñ¼ÌĞø´æ¿î", "´æ¿î³É¹¦",JOptionPane.YES_NO_OPTION) == 1){
+				if(JOptionPane.showConfirmDialog(null, "å·²æˆåŠŸå­˜è¿›"+money+"å…ƒï¼Œæ˜¯å¦ç»§ç»­å­˜æ¬¾", "å­˜æ¬¾æˆåŠŸ",JOptionPane.YES_NO_OPTION) == 1){
 					OnBtnBack();
 				}
 			}
 		} catch (NumberFormatException e1) {
-			JOptionPane.showMessageDialog(null, "ÊäÈë´íÎó");
+			JOptionPane.showMessageDialog(null, "è¾“å…¥é”™è¯¯");
 		}
 	}
 
 	public void Refresh() {
-		// TODO Auto-generated method stub
 		tfMoney.setText("");
 		tfMoney.requestFocus();
 	}

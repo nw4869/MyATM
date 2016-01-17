@@ -34,11 +34,11 @@
 //			setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 //
 //			//take menoy
-//			btnTakeMoney = new JButton("È¡¡¡¡¡¿î");
+//			btnTakeMoney = new JButton("å–ã€€ã€€æ¬¾");
 //			//Balance inquiries
-//			btnBalance = new JButton("²éÑ¯Óà¶î");
+//			btnBalance = new JButton("æŸ¥è¯¢ä½™é¢");
 //			//tui card
-//			btnQuit = new JButton("ÍË¡¡¡¡¿¨");
+//			btnQuit = new JButton("é€€ã€€ã€€å¡");
 //
 //			add(Box.createRigidArea(new Dimension(0, 20)));
 //			add(btnTakeMoney);
@@ -82,8 +82,8 @@
 //			setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 //			
 //			//pwdchange
-//			btnPwdChange = new JButton("ĞŞ¸ÄÃÜÂë");
-//			btnTransfer = new JButton("×ª¡¡¡¡ÕË");
+//			btnPwdChange = new JButton("ä¿®æ”¹å¯†ç ");
+//			btnTransfer = new JButton("è½¬ã€€ã€€è´¦");
 //
 //			add(Box.createRigidArea(new Dimension(0, 20)));
 //			add(btnPwdChange);

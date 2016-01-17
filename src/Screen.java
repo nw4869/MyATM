@@ -4,7 +4,7 @@ public class Screen extends JFrame {
 	ATM atm;
 	
 	/**
-	 * ¸÷ÖĞ°åÃæ(PANEL)¶¼ÊÇ¼Ì³ĞBasePanelÀàµÄ£¬×¢ÊÍ¼ûBASEPANEL.JAVA
+	 * å„ä¸­æ¿é¢(PANEL)éƒ½æ˜¯ç»§æ‰¿BasePanelç±»çš„ï¼Œæ³¨é‡Šè§BASEPANEL.JAVA
 	 */
 	FirstPanel firstPanel;
 	MainPanel1 mainPanel;
@@ -28,15 +28,14 @@ public class Screen extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(500, 250);
 		getContentPane().add(firstPanel);
-		this.setResizable(false);// ´°¿Ú²»¿É±ä
-        this.setLocationRelativeTo(null);// ´°¿Ú¾ÓÖĞÏÔÊ¾
-        this.setVisible(true);// ÏÔÊ¾´°Ìå
+		this.setResizable(false);// çª—å£ä¸å¯å˜
+        this.setLocationRelativeTo(null);// çª—å£å±…ä¸­æ˜¾ç¤º
+        this.setVisible(true);// æ˜¾ç¤ºçª—ä½“
 	}
 
-	//ÇĞ»»µ½Ö÷½çÃæÍ¬ÏÂ
+	//åˆ‡æ¢åˆ°ä¸»ç•Œé¢åŒä¸‹
 	public void initMain() {
-		// TODO Auto-generated method stub
-		//ÇĞ»»µ½mainPanel°åÃæ
+		//åˆ‡æ¢åˆ°mainPanelæ¿é¢
 		getContentPane().removeAll();
 		getContentPane().add(mainPanel);
 		getContentPane().validate();
@@ -45,29 +44,28 @@ public class Screen extends JFrame {
 	}
 	
 	public boolean OutMoney(){
-		String money = JOptionPane.showInputDialog("ÇëÊäÈëÄúµÄÒªÌáÈ¡µÄ½ğ¶î.", "");
+		String money = JOptionPane.showInputDialog("è¯·è¾“å…¥æ‚¨çš„è¦æå–çš„é‡‘é¢.", "");
 		double nMoney = 0;
 		try{
 			nMoney = Double.parseDouble(money);
 			if (!atm.OutMoney(nMoney)){
-				JOptionPane.showMessageDialog(null, "ÄúµÄÓà¶î²»×ã!");
+				JOptionPane.showMessageDialog(null, "æ‚¨çš„ä½™é¢ä¸è¶³!");
 				return false;
 			}
 			return true;
 		}catch(NumberFormatException ex){
-			JOptionPane.showMessageDialog(null, "ÄúµÄÊäÈë³ö´í!");
+			JOptionPane.showMessageDialog(null, "æ‚¨çš„è¾“å…¥å‡ºé”™!");
 			return false;
 		}
 	}
 	
 	public void Quit(){
-		JOptionPane.showMessageDialog(null, "ÍË¿¨³É¹¦!");
+		JOptionPane.showMessageDialog(null, "é€€å¡æˆåŠŸ!");
 //		ToFirst();
 		System.exit(0);
 	}
 
 	private void ToFirst() {
-		// TODO Auto-generated method stub
 		getContentPane().removeAll();
 		getContentPane().add(firstPanel);
 		getContentPane().validate();
@@ -75,12 +73,10 @@ public class Screen extends JFrame {
 	}
 
 	public void showBalance(double balance) {
-		// TODO Auto-generated method stub
-		JOptionPane.showMessageDialog(null, "ÄúµÄÓà¶îÎª£º"+balance+"Ôª¡£");
+		JOptionPane.showMessageDialog(null, "æ‚¨çš„ä½™é¢ä¸ºï¼š"+balance+"å…ƒã€‚");
 	}
 
 	public void ToTransfer() {
-		// TODO Auto-generated method stub
 		getContentPane().removeAll();
 		getContentPane().add(transferPanel);
 		getContentPane().validate();
@@ -89,7 +85,6 @@ public class Screen extends JFrame {
 	}
 
 	public void ToLogin() {
-		// TODO Auto-generated method stub
 		getContentPane().removeAll();
 		getContentPane().add(loginPanel);
 		getContentPane().validate();
@@ -99,7 +94,6 @@ public class Screen extends JFrame {
 	}
 
 	public void ToPwdChange() {
-		// TODO Auto-generated method stub
 		getContentPane().removeAll();
 		getContentPane().add(pwdChangePanel);
 		getContentPane().validate();
@@ -108,7 +102,6 @@ public class Screen extends JFrame {
 	}
 
 	public void ToMain() {
-		// TODO Auto-generated method stub
 		initMain();
 	}
 	

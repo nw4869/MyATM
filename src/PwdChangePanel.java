@@ -16,16 +16,14 @@ public class PwdChangePanel extends BasePanel implements ActionListener {
 		
 	PwdChangePanel(ATM atm) {
 		super(atm);
-		// TODO Auto-generated constructor stub
 	}
 
 
 	@Override
 	protected void centerInit() {
-		// TODO Auto-generated method stub
-		lblOld =  new JLabel("ÇëÊäÈë¾ÉÃÜÂë£º");
-		lblNew1 = new JLabel("ÇëÊäÈëĞÂÃÜÂë£º");
-		lblNew2 = new JLabel("È·ÈÏÃÜÂë£º");
+		lblOld =  new JLabel("è¯·è¾“å…¥æ—§å¯†ç ï¼š");
+		lblNew1 = new JLabel("è¯·è¾“å…¥æ–°å¯†ç ï¼š");
+		lblNew2 = new JLabel("ç¡®è®¤å¯†ç ï¼š");
 				
 		pfOld = new JPasswordField(10);
 		pfNew1 = new JPasswordField(10);
@@ -50,7 +48,6 @@ public class PwdChangePanel extends BasePanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if(e.getSource() == btnOK){
 			OnOK();
 		}
@@ -70,7 +67,7 @@ public class PwdChangePanel extends BasePanel implements ActionListener {
 	private void OnOK(){
 //		System.out.println("ok");
 //		if(pfOld.getText() == "" || pfNew1.getText() == "" || pfNew2.getText() == ""){
-//			JOptionPane.showMessageDialog(null, "Çë²»ÒªÁô¿Õ");
+//			JOptionPane.showMessageDialog(null, "è¯·ä¸è¦ç•™ç©º");
 //		}
 		
 		String Old = new String(pfOld.getPassword());
@@ -83,20 +80,20 @@ public class PwdChangePanel extends BasePanel implements ActionListener {
 			nNew = Integer.parseInt(New1);
 			
 			if(!New1.equals(New2)){
-				JOptionPane.showMessageDialog(null, "ÇëÊäÈëÁ½´ÎÍ¬ÑùµÄÃÜÂë");
+				JOptionPane.showMessageDialog(null, "è¯·è¾“å…¥ä¸¤æ¬¡åŒæ ·çš„å¯†ç ");
 			}
 			else if(!atm.CheckPasswod(nOld)){
-				JOptionPane.showMessageDialog(null, "¾ÉÃÜÂë´íÎó£¬ÇëÖØÊÔ");
+				JOptionPane.showMessageDialog(null, "æ—§å¯†ç é”™è¯¯ï¼Œè¯·é‡è¯•");
 			}
 			else{
 				atm.pwdChange(nNew);
-				JOptionPane.showMessageDialog(null, "ÃÜÂëĞŞ¸Ä³É¹¦!");
+				JOptionPane.showMessageDialog(null, "å¯†ç ä¿®æ”¹æˆåŠŸ!");
 				Refresh();
 				OnBack();
 			}
 		}
 		catch(NumberFormatException e){
-			JOptionPane.showMessageDialog(null, "ÊäÈë´íÎó£¬Çë¼ì²éÊäÈë");
+			JOptionPane.showMessageDialog(null, "è¾“å…¥é”™è¯¯ï¼Œè¯·æ£€æŸ¥è¾“å…¥");
 		}
 	
 	}

@@ -8,14 +8,14 @@ public class MoneyFrame extends JFrame {
 //        moneyframe.setVisible(true);  
 //    }  
       
-    //用于处理拖动事件，表示鼠标按下时的坐标，相对于JFrame  
+    //鐢ㄤ簬澶勭悊鎷栧姩浜嬩欢锛岃〃绀洪紶鏍囨寜涓嬫椂鐨勫潗鏍囷紝鐩稿浜嶫Frame  
     int xOld = 0;  
     int yOld = 0;  
       
     public MoneyFrame() {  
         this.setLayout(null);  
   
-        //处理事件  
+        //澶勭悊浜嬩欢  
         this.addMouseListener(new MouseAdapter() {  
             @Override  
             public void mousePressed(MouseEvent e) {  
@@ -38,10 +38,10 @@ public class MoneyFrame extends JFrame {
             }  
         });  
         
-        //背景图片，添加到背景Panel里面  
+        //鑳屾櫙鍥剧墖锛屾坊鍔犲埌鑳屾櫙Panel閲岄潰  
         JLabel bgLabel = new JLabel(new ImageIcon("img/money.gif"));  
           
-        //背景Panel  
+        //鑳屾櫙Panel  
         JPanel bgPanel = new JPanel();  
         bgPanel.setBounds(0, 0, 450, 218);  
         

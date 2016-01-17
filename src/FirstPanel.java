@@ -12,8 +12,8 @@ public class FirstPanel extends JPanel implements ActionListener{
 	FirstPanel(ATM atm) {
 		this.atm = atm;
 		setLayout(new GridBagLayout());
-		btnInsertCard = new JButton("InsertCard");
-		lblInfo = new JLabel("Çë²åÈëĞÅÓÃ¿¨£º");
+		btnInsertCard = new JButton("æ’å¡");
+		lblInfo = new JLabel("è¯·æ’å…¥é“¶è¡Œå¡ï¼š");
 		add(lblInfo, 0);
 		add(btnInsertCard);
 		btnInsertCard.addActionListener(this);
@@ -21,10 +21,9 @@ public class FirstPanel extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		atm.InsertCard();
 		if(!atm.ReadCard()){
-			JOptionPane.showMessageDialog(null, "ĞÅÓÃ¿¨¶ÁÈ¡Ê§°Ü");
+			JOptionPane.showMessageDialog(null, "é“¶è¡Œå¡è¯»å–å¤±è´¥");
 		}
 		atm.getScreen().ToLogin();
 	}

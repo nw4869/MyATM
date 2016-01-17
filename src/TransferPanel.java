@@ -16,15 +16,13 @@ public class TransferPanel extends BasePanel implements ActionListener {
 		
 	TransferPanel(ATM atm) {
 		super(atm);
-		// TODO Auto-generated constructor stub
 	}
 
 
 	@Override
 	protected void centerInit() {
-		// TODO Auto-generated method stub
-		lblInfo1 = new JLabel("ÇëÊäÈëÊÕ¿îÈËÕËºÅ£º");
-		lblInfo2 = new JLabel("ÇëÊäÈë×ªÕË½ğ¶î:");
+		lblInfo1 = new JLabel("è¯·è¾“å…¥æ”¶æ¬¾äººè´¦å·ï¼š");
+		lblInfo2 = new JLabel("è¯·è¾“å…¥è½¬è´¦é‡‘é¢:");
 		tfAccount = new JTextField("");
 		tfMoney = new JTextField("");
 
@@ -43,7 +41,6 @@ public class TransferPanel extends BasePanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if(e.getSource() == btnBack){
 			OnBtnBack();
 		}
@@ -57,7 +54,6 @@ public class TransferPanel extends BasePanel implements ActionListener {
 	}
 	
 	private void OnBtnOK() {
-		// TODO Auto-generated method stub
 		String strAccount = tfAccount.getText();
 		String strMoney = tfMoney.getText();
 		try{
@@ -67,27 +63,27 @@ public class TransferPanel extends BasePanel implements ActionListener {
 			switch (atm.transfer(nAccount, dMoney))
 			{
 			case 0:
-//				JOptionPane.showMessageDialog(null, "×ªÕË³É¹¦!");
+//				JOptionPane.showMessageDialog(null, "è½¬è´¦æˆåŠŸ!");
 				Refresh();
-				if(JOptionPane.showConfirmDialog(null, "ÒÑ³É¹¦½«"+strMoney+"Ôª×ªÈëÕËºÅ:"+strAccount+ "!ÊÇ·ñ¼ÌĞø×ªÕË£¿", "×ªÕË³É¹¦",JOptionPane.YES_NO_OPTION) == 1){
+				if(JOptionPane.showConfirmDialog(null, "å·²æˆåŠŸå°†"+strMoney+"å…ƒè½¬å…¥è´¦å·:"+strAccount+ "!æ˜¯å¦ç»§ç»­è½¬è´¦ï¼Ÿ", "è½¬è´¦æˆåŠŸ",JOptionPane.YES_NO_OPTION) == 1){
 					OnBtnBack();
 				}
 				break;
 			case 1:
-				JOptionPane.showMessageDialog(null, "ÕËºÅ" + strAccount + "²»´æÔÚ£¡");
+				JOptionPane.showMessageDialog(null, "è´¦å·" + strAccount + "ä¸å­˜åœ¨ï¼");
 				break;
 			case 2:
-				JOptionPane.showMessageDialog(null, "Óà¶î²»×ã£¬×ªÕËÊ§°Ü!");
+				JOptionPane.showMessageDialog(null, "ä½™é¢ä¸è¶³ï¼Œè½¬è´¦å¤±è´¥!");
 				break;
 			case 3:
-				JOptionPane.showMessageDialog(null, "²»ÄÜ×ªÕË¸ø×Ô¼º£¬×ªÕËÊ§°Ü!");
+				JOptionPane.showMessageDialog(null, "ä¸èƒ½è½¬è´¦ç»™è‡ªå·±ï¼Œè½¬è´¦å¤±è´¥!");
 				break;
 				
 			}
 			
 		}
 		catch(NumberFormatException e){
-			JOptionPane.showMessageDialog(null, "ÊäÈëÓĞÎó£¡");
+			JOptionPane.showMessageDialog(null, "è¾“å…¥æœ‰è¯¯ï¼");
 		}
 	}
 
@@ -98,7 +94,6 @@ public class TransferPanel extends BasePanel implements ActionListener {
 	
 
 	public void Refresh() {
-		// TODO Auto-generated method stub
 		tfAccount.setText("");
 		tfMoney.setText("");
 		tfAccount.requestFocus();

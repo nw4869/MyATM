@@ -2,50 +2,50 @@ import javax.swing.JFrame;
 
 public class ATM {
 
-	//×î´óÕËºÅÊı
+	//æœ€å¤§è´¦å·æ•°
 	private final int MAX_ACN = 1000;
-	//´¦ÀíÕË»§µÄÀà
+	//å¤„ç†è´¦æˆ·çš„ç±»
 	private Account[] account;
-	//µ±Ç°ÕËºÅ
+	//å½“å‰è´¦å·
 	private Account accountNow;
-	//¶Á¿¨Æ÷Àà
+	//è¯»å¡å™¨ç±»
 	private CardReader cardReader;
-	//ÍÂÇ®»ú
+	//åé’±æœº
 	private MoneySpiter moneySpiter;
-	//ÏÔÊ¾Æ÷£¨Í¼ĞÎ´¦Àí£©
+	//æ˜¾ç¤ºå™¨ï¼ˆå›¾å½¢å¤„ç†ï¼‰
 	private Screen screen;
 
 	ATM() {
 		account = new Account[MAX_ACN];
 		for(int i = 0; i < MAX_ACN; i++)
 			account[i] = new Account();
-		
+
 		//-----------TEST---------------
 		account[100].setOK(true);
 		account[100].setPassword(123);
-		account[100].Save(1<<20);
-		
+		account[100].Save(1 << 20);
+
 		account[101].setOK(true);
 		account[101].setPassword(123);
 		account[101].Save(100);
 		//------------------------------
-		
+
 		cardReader = new CardReader();
 		moneySpiter = new MoneySpiter();
 		screen = new Screen(this);
 	}
-	
+
 	/**
-	 * ÒÔÏÂ¶¨ÒåÒ»Ğ©ÓëATMÏà¹ØµÄ²Ù×÷º¯Êı½Ó¿Ú
-	 * Ìá¹©¸ø×é¼şµ÷ÓÃ
-	 * mainº¯ÊıÔÚ×îºó
-	 * 
+	 * ä»¥ä¸‹å®šä¹‰ä¸€äº›ä¸ATMç›¸å…³çš„æ“ä½œå‡½æ•°æ¥å£
+	 * æä¾›ç»™ç»„ä»¶è°ƒç”¨
+	 * mainå‡½æ•°åœ¨æœ€å
+	 *
 	 */
-	
+
 	public boolean InsertCard(){
 		return true;
 	}
-	
+
 	public boolean ReadCard(){
 		int accountId = cardReader.read();
 		if(accountId >= MAX_ACN || !account[accountId].isOK())
@@ -53,15 +53,15 @@ public class ATM {
 		accountNow = account[accountId];
 		return true;
 	}
-	
+
 	public void ScreenInit(){
 		screen.initMain();
 	}
-	
+
 	public boolean CheckPasswod(int pwdInput){
 		return accountNow.checkPassword(pwdInput);
 	}
-	
+
 	public boolean OutMoney(double amount){
 		if (accountNow.Out(amount) < 0)
 			return false;
@@ -69,28 +69,27 @@ public class ATM {
 			return false;
 		return true;
 	}
-	
+
 	public void Quit(){
 		screen.Quit();
 	}
 
 	public double getBalance() {
-		// TODO Auto-generated method stub
 		return accountNow.getAmount();
 	}
-	
+
 	public Screen getScreen(){
 		return screen;
 	}
-	
+
 	public void pwdChange(int pwd){
 		accountNow.setPassword(pwd);
 	}
-	
+
 	public Account findAccount(int accountId){
 		return account[accountId];
 	}
-	
+
 	public int transfer(int accountId, double money){
 		if (accountId >= MAX_ACN || !account[accountId].isOK()){
 			return 1;
@@ -105,11 +104,10 @@ public class ATM {
 	}
 
 	public boolean SaveMoney(double money) {
-		// TODO Auto-generated method stub
 		accountNow.Save(money);
 		return true;
 	}
-	
+
 
 
 	public static void main(String argvs[]) {

@@ -18,19 +18,17 @@ public class MainPanel1 extends BasePanel implements ActionListener {
 
 	MainPanel1(ATM atm) {
 		super(atm);
-		// TODO Auto-generated constructor stub
-		
+
 	}
 
 	@Override
 	protected void eastInit() {
-		// TODO Auto-generated method stub
 		// take menoy
-		btnTakeMoney = new JButton("È¡¡¡¡¡¿î");
+		btnTakeMoney = new JButton("å–ã€€ã€€æ¬¾");
 		// Balance inquiries
-		btnBalance = new JButton("²éÑ¯Óà¶î");
+		btnBalance = new JButton("æŸ¥è¯¢ä½™é¢");
 		// tui card
-		btnQuit = new JButton("ÍË¡¡¡¡¿¨");
+		btnQuit = new JButton("é€€ã€€ã€€å¡");
 
 		eastLayout.add(Box.createRigidArea(new Dimension(0, 20)));
 		eastLayout.add(btnTakeMoney);
@@ -49,12 +47,11 @@ public class MainPanel1 extends BasePanel implements ActionListener {
 
 	@Override
 	protected void westInit() {
-		// TODO Auto-generated method stub
 
 		// pwdchange
-		btnPwdChange = new JButton("ĞŞ¸ÄÃÜÂë");
-		btnSaveMoney = new JButton("´æ¡¡¡¡¿î");
-		btnTransfer = new JButton("×ª¡¡¡¡ÕË");
+		btnPwdChange = new JButton("ä¿®æ”¹å¯†ç ");
+		btnSaveMoney = new JButton("å­˜ã€€ã€€æ¬¾");
+		btnTransfer = new JButton("è½¬ã€€ã€€è´¦");
 
 		westLayout.add(Box.createRigidArea(new Dimension(0, 20)));
 		westLayout.add(btnPwdChange);
@@ -74,16 +71,14 @@ public class MainPanel1 extends BasePanel implements ActionListener {
 
 	@Override
 	protected void centerInit() {
-		// TODO Auto-generated method stub
 		centerLayout.add(Box.createRigidArea(new Dimension(0, 10)));
-		JLabel lblWelcome = new JLabel("  Welcome!");
+		JLabel lblWelcome = new JLabel("  è¯·é€‰æ‹©æœåŠ¡é¡¹ç›®");
 //		lblWelcome.setHorizontalAlignment(JLabel.CENTER);
 		centerLayout.add(lblWelcome);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if(e.getSource() == btnQuit){
 			atm.Quit();
 		}

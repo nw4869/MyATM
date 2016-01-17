@@ -7,14 +7,14 @@ import javax.swing.*;
 
 public abstract class BasePanel extends JPanel implements ActionListener{
 	/**
-	 * EastLayout WestLayout CenterLayoutÊÇBorderLayoutµÄÈı¸ö²¿·Ö£¬ÏÔÊ¾¶«Çø£¬Î÷Çø£¬ÖĞĞÄÇø¡£
+	 * EastLayout WestLayout CenterLayoutæ˜¯BorderLayoutçš„ä¸‰ä¸ªéƒ¨åˆ†ï¼Œæ˜¾ç¤ºä¸œåŒºï¼Œè¥¿åŒºï¼Œä¸­å¿ƒåŒºã€‚
 	 */
 	ATM atm;
 	protected EastLayout eastLayout;
 	protected WestLayout westLayout;
 	protected CenterLayout centerLayout;
 	
-	//Ä¬ÈÏµÄÈ·¶¨¡¢·µ»Ø°´Å¥
+	//é»˜è®¤çš„ç¡®å®šã€è¿”å›æŒ‰é’®
 	protected JButton btnOK;
 	protected JButton btnBack;
 	
@@ -32,14 +32,14 @@ public abstract class BasePanel extends JPanel implements ActionListener{
 		add(westLayout, BorderLayout.WEST);
 		add(centerLayout, BorderLayout.CENTER);
 		
-		//Èı¸öÁô¸ø×ÓÀàÊµÏÖ¶àÌ¬ĞÔµÄ¶«Î÷¡£¡£¡£
+		//ä¸‰ä¸ªç•™ç»™å­ç±»å®ç°å¤šæ€æ€§çš„ä¸œè¥¿ã€‚ã€‚ã€‚
 		eastInit();
 		westInit();
 		centerInit();
 	}
 
 	protected void eastInit(){
-		btnOK = new JButton("È·¡¡¡¡ÈÏ");
+		btnOK = new JButton("ç¡®ã€€ã€€è®¤");
 		eastLayout.add(Box.createVerticalGlue());
 		eastLayout.add(btnOK);
 		eastLayout.add(Box.createRigidArea(new Dimension(0, 20)));
@@ -50,8 +50,7 @@ public abstract class BasePanel extends JPanel implements ActionListener{
 
 	protected void westInit(){
 		
-		// TODO Auto-generated method stub
-		btnBack = new JButton("·µ¡¡¡¡»Ø");
+		btnBack = new JButton("è¿”ã€€ã€€å›");
 		westLayout.add(Box.createVerticalGlue());
 		westLayout.add(btnBack);
 		westLayout.add(Box.createRigidArea(new Dimension(0, 20)));

@@ -1,6 +1,7 @@
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.regex.Pattern;
 
 import javax.swing.*;
 
@@ -12,13 +13,11 @@ public class TakeMoneyPanel extends BasePanel implements ActionListener {
 
 	TakeMoneyPanel(ATM atm) {
 		super(atm);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	protected void centerInit() {
-		// TODO Auto-generated method stub
-		lblinfo = new JLabel("ÇëÊäÈëÒªÌáÈ¡µÄ½ğ¶î:");
+		lblinfo = new JLabel("è¯·è¾“å…¥è¦æå–çš„é‡‘é¢:");
 
 		tfMoney = new JTextField(10);
 
@@ -33,7 +32,6 @@ public class TakeMoneyPanel extends BasePanel implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 		if (e.getSource() == btnBack) {
 			OnBtnBack();
 		} else if (e.getSource() == btnOK) {
@@ -44,15 +42,24 @@ public class TakeMoneyPanel extends BasePanel implements ActionListener {
 
 	}
 
+	public static boolean isNumeric(String str){
+		Pattern pattern = Pattern.compile("[0-9]*");
+		return pattern.matcher(str).matches();
+	}
+
 	private void OnBtnOK() {
-		try {
-			double money = new Double(tfMoney.getText());
-			if (!atm.OutMoney(money)) {
-				JOptionPane.showMessageDialog(null, "ÄúµÄÓà¶î²»×ã!");
-			}
-		} catch (NumberFormatException e1) {
-			JOptionPane.showMessageDialog(null, "ÊäÈë´íÎó");
-		}
+            if (!TakeMoneyPanel.isNumeric(tfMoney.getText())) {
+                JOptionPane.showMessageDialog(null, "è¾“å…¥é”™è¯¯");
+            } else {
+                double money = Double.parseDouble(tfMoney.getText());
+                if (!((int)money % 100 == 0)) {
+                    JOptionPane.showMessageDialog(null, "é‡‘é¢å¿…é¡»ä¸ºæ•´ç™¾");
+                    return;
+                }
+                if (!atm.OutMoney(money)) {
+                    JOptionPane.showMessageDialog(null, "æ‚¨çš„ä½™é¢ä¸è¶³!");
+                }
+            }
 	}
 
 	private void OnBtnBack(){
@@ -61,7 +68,6 @@ public class TakeMoneyPanel extends BasePanel implements ActionListener {
 	}
 
 	public void Refresh() {
-		// TODO Auto-generated method stub
 		tfMoney.setText("");
 		tfMoney.requestFocus();
 	}
